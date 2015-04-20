@@ -1,1 +1,3 @@
-# -docomo-chatter
+# docomochatter
+
+Docomo Zatsudan API Client
