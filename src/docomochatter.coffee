@@ -2,19 +2,19 @@ request = require('request')
 querystring = require('querystring')
 
 class Docomochater
-  DOCOMO_URL = "https://api.apigw.smt.docomo.ne.jp/dialogue/v1/dialogue"
+  DOCOMO_DIALOGUE_URL = "https://api.apigw.smt.docomo.ne.jp/dialogue/v1/dialogue"
 
-  init: ->
-    @request()
+  constructor: (@api_key) ->
 
-  request: ->
-    qs = querystring.stringify APIKEY: process.env.DOCOMO_API_KEY
-    post_url = DOCOMO_URL + "?" + qs
-
+  create_dialogue: (message, params) ->
     request.post
-      url: post_url
+      url: @post_url()
       headers: 'Content-Type': 'application/json', Accept: 'application/json'
-      json: utt: "こんにちは", (error, response, body) ->
+      json: utt: message, (error, response, body) ->
         console.log body
 
-(new Docomochater).init()
+  post_url: ->
+    qs = querystring.stringify APIKEY: @api_key
+    post_url = "#{DOCOMO_DIALOGUE_URL}?#{qs}"
+
+(new Docomochater(process.env.DOCOMO_API_KEY)).create_dialogue('hello')
