@@ -24,6 +24,7 @@
     "coffee-script": "^1.9.2"
   },
   "dependencies": {
-    "request-json": "^0.5.2"
+    "q": "^1.2.0",
+    "request": "^2.55.0"
   }
 }
