@@ -1,3 +1,4 @@
+extend = require('util')._extend
 request = require('request')
 querystring = require('querystring')
 
@@ -11,7 +12,7 @@ class Docomochater
       request.post
         url: @post_url()
         headers: 'Content-Type': 'application/json', Accept: 'application/json'
-        json: {utt: message, t: 20}, (error, response, body) ->
+        json: extend(options, {utt: message}), (error, response, body) ->
           unless error?
             resolve(body)
           else
@@ -19,7 +20,7 @@ class Docomochater
 
   post_url: ->
     qs = querystring.stringify APIKEY: @api_key
-    post_url = "#{DOCOMO_DIALOGUE_URL}?#{qs}"
+    "#{DOCOMO_DIALOGUE_URL}?#{qs}"
 
 client = new Docomochater(process.env.DOCOMO_API_KEY)
 client.create_dialogue('hello')
