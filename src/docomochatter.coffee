@@ -22,9 +22,4 @@ class Docomochater
     qs = querystring.stringify APIKEY: @api_key
     "#{DOCOMO_DIALOGUE_URL}?#{qs}"
 
-client = new Docomochater(process.env.DOCOMO_API_KEY)
-client.create_dialogue('hello')
-  .then (reponse) ->
-    console.log reponse
-  .catch (error) ->
-    console.log error
+module.exports = Docomochater
