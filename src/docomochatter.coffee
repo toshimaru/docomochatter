@@ -2,7 +2,7 @@ extend = require('util')._extend
 request = require('request')
 querystring = require('querystring')
 
-class Docomochater
+class Docomochatter
   DOCOMO_DIALOGUE_URL = "https://api.apigw.smt.docomo.ne.jp/dialogue/v1/dialogue"
 
   constructor: (@api_key) ->
@@ -22,4 +22,4 @@ class Docomochater
     qs = querystring.stringify APIKEY: @api_key
     "#{DOCOMO_DIALOGUE_URL}?#{qs}"
 
-module.exports = Docomochater
+module.exports = Docomochatter
