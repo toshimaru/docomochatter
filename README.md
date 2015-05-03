@@ -21,7 +21,7 @@ client.create_dialogue('hello').then(function(response){
 });
 ```
 
-## CoffeeScript ver.
+## via CoffeeScript
 
 ```coffee
 Docomochatter = require('./src/docomochatter')
