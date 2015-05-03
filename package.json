@@ -1,8 +1,8 @@
 {
   "name": "docomochatter",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Docomo Zatsudan API Client",
-  "main": "lib/docmochatter.js",
+  "main": "lib/docomochatter",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "coffee -o lib/ -c src/"

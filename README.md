@@ -1,4 +1,4 @@
-# docomochatter
+# docomochatter [![npm version](https://badge.fury.io/js/docomochatter.svg)](http://badge.fury.io/js/docomochatter)
 
 Docomo Zatsudan(雑談) API Client
 
@@ -11,7 +11,7 @@ Docomo Zatsudan(雑談) API Client
 Set docomo API key to the environment variable, `DOCOMO_API_KEY`, then instantiate the object and call `create_dialogue()` with your message. `create_dialogue()` returns [Promise](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise), so you can chain methods by using `.then()` and `.catch()`.
 
 ```js
-var Docomochatter = require('./lib/docomochatter');
+var Docomochatter = require('docomochatter');
 
 client = new Docomochatter(process.env.DOCOMO_API_KEY);
 client.create_dialogue('hello').then(function(response){
@@ -24,7 +24,7 @@ client.create_dialogue('hello').then(function(response){
 ## via CoffeeScript
 
 ```coffee
-Docomochatter = require('./src/docomochatter')
+Docomochatter = require('docomochatter')
 
 client = new Docomochatter(process.env.DOCOMO_API_KEY)
 client.create_dialogue('hello')
