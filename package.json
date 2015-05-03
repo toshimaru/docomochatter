@@ -1,6 +1,6 @@
 {
   "name": "docomochatter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Docomo Zatsudan API Client",
   "main": "lib/docmochatter.js",
   "scripts": {
