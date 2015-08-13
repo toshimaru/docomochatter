@@ -1,10 +1,10 @@
 # docomochatter [![npm version](https://badge.fury.io/js/docomochatter.svg)](http://badge.fury.io/js/docomochatter)
 
-Docomo Zatsudan(雑談) API Client
+Docomo Zatsudan(雑談) API Client.
 
 # Requirement
 * Node v0.12 or more
-* A Docomo API key (Get [here](https://dev.smt.docomo.ne.jp/?p=about.index))
+* Docomo API key (Get it [here](https://dev.smt.docomo.ne.jp/?p=about.index))
 
 # Usage
 
@@ -15,7 +15,7 @@ var Docomochatter = require('docomochatter');
 
 client = new Docomochatter(process.env.DOCOMO_API_KEY);
 client.create_dialogue('hello').then(function(response){
-  console.log(response);
+  console.log(response.utt);
 }).catch(function(error){
   console.log(error);
 });
@@ -28,8 +28,18 @@ Docomochatter = require('docomochatter')
 
 client = new Docomochatter(process.env.DOCOMO_API_KEY)
 client.create_dialogue('hello')
-  .then (reponse) ->
-    console.log reponse
+  .then (response) ->
+    console.log response.utt
   .catch (error) ->
     console.log error
+```
+
+# Sample API response
+
+```
+{ utt: 'はろー',
+  yomi: 'はろー',
+  mode: 'dialog',
+  da: '30',
+  context: 'mnqsaABy9i7ByZBB6QxU9Q' }
 ```
